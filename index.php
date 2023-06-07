@@ -31,7 +31,6 @@ include 'comman/enquiry.php';
   }
 
   ?>
-
   <!-- Modal -->
   <div class="modal fade" id="quotationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

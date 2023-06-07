@@ -1,54 +1,118 @@
-<style>.blink_me {
-  animation: blinker 3s linear infinite;
-}
+<style>
+    .blink_me {
+        animation: blinker 3s linear infinite;
+    }
 
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}</style>
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    /* The sidebar menu */
+    .sidebar {
+        height: 30%;
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 0.5;
+        /* Stay on top */
+        top: 69.5px;
+        left: 0;
+        background-color: #212529 !important;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 60px;
+        /* Place content 60px from the top */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in the sidebar */
+    }
+
+    /* The sidebar links */
+    .sidebar a {
+        text-decoration: none;
+        color: #FFFFFF;
+        display: block;
+        transition: 0.3s;
+        opacity: 0.7;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+    .sidebar a:hover {
+        color: black;
+    }
+
+    /* Position and style the close button (top right corner) */
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    /* The button used to open the sidebar */
+    .openbtn {
+        font-size: 17px;
+        cursor: pointer;
+        background-color: #212529;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+    }
+
+    .openbtn:hover {
+        opacity: 1;
+        border: #FFFFFF;
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+        transition: margin-left .5s;
+        /* If you want a transition effect */
+        padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+        .sidebar {
+            padding-top: 15px;
+        }
+
+        .sidebar a {
+            font-size: 18px;
+        }
+    }
+</style>
 
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.php">
+    <div class="container " style="width: 511px;">
+        <a class="navbar-brand" href="index.php" style="margin: 0;">
             <img src="img/cec.png" alt="cec_logo">
         </a>
     </div>
+    <div class="container"><button class="openbtn" onclick="openNav()" style="opacity: 0.6;">&#9776;Options</button>
+        <ul>
+            <li class="nav-item">
+                <span class="badge bg-primary mt-3 blink_me mr-4" data-bs-toggle="modal" data-bs-target="#enquiryModal">New Enquiry</span>
+            </li>
+        </ul>
+    </div>
     <div class="container-fluid">
-        <span class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Welcome : <?php echo $name ?>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Update</a></li>
-                <li><a class="dropdown-item" href="logout.php">LogOut</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="ph.php">Something else here</a></li>
-            </ul>
-        </span>
-
+        <ul>
+            <li class="nav-item">
+            </li>
+        </ul>
+        <ul>
+            <li class="nav-item">
+            </li>
+        </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Options
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="enquiryHome.php">Enquiry</a></li>
-                        <li><a class="dropdown-item" href="quatationHome.php">Quotation</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="poHome.php">PO</a></li>
-                    </ul>
-                </li>
-            </ul>
-
             <!-- Modal -->
             <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -97,11 +161,43 @@
                 <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search">
                 <button class="btn btn-outline-primary" type="submit" name="submitSearch">Search</button>
             </form>
-            <ul>
-            <li class="nav-item pe-4">
-                <span class="badge bg-primary mt-3 blink_me" data-bs-toggle="modal" data-bs-target="#enquiryModal">New Enquiry</span>
-            </li>
-        </ul>
+            <span class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Welcome : <?php echo $name ?>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Update</a></li>
+                    <li><a class="dropdown-item" href="logout.php">LogOut</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </span>
+
         </div>
     </div>
 </nav>
+
+<!-- The sidebar -->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="dropdown-item" href="enquiryHome.php">Enquiry</a>
+    <a class="dropdown-item" href="quatationHome.php">Quotation</a>
+    <a class="dropdown-item" href="poHome.php">PO</a>
+</div>
+
+
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "100px";
+        document.getElementById("main").style.marginLeft = "100px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
