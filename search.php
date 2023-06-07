@@ -20,6 +20,7 @@ include 'comman/enquiry.php';
         <thead>
             <tr>
                 <th scope="col">SrN.</th>
+                <th scope="col">Enquiry Num.</th>
                 <th scope="col">Company Name</th>
                 <th scope="col">Company Area</th>
                 <th scope="col">Contact</th>
@@ -41,6 +42,7 @@ include 'comman/enquiry.php';
                         echo ' <tbody>
     <tr>
       <th scope="row">' . ++$counter . '</th>
+      <td>' . $row["enqNum"] . '</td>
       <td>' . $row["cname"] . '</td>
       <td>' . $row["carea"] . '</td>
       <td>' . $row["phone"] . '</td>

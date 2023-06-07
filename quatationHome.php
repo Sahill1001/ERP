@@ -109,7 +109,6 @@ include 'comman/enquiry.php';
     <tr>
       <th scope="row">' . ++$counter . '</th>
       <td ><input id="id' . $row["enqNum"] . '" name="enqNumId" type="radio" value="' . $row["enqNum"] . '" style="visibility: hidden;"><label for="id' . $row["enqNum"] . '"><span class="badge rounded-pill bg-primary" data-bs-toggle="modal" data-bs-target="#fileModal">' . $row["quotNum"] . '</span></label></td>
-
       <td>' . $row["cname"] . '</td>
       <td>' . $row["estatus"] . '</td>
       <td>₹ ' . $row["quotAmount"] . '</td>
