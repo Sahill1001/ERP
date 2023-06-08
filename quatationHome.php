@@ -131,6 +131,7 @@ include 'comman/enquiry.php';
   <script>
     $('input[type=radio]').click(function(e) {
       var enqNumId = $(this).val();
+      console.log(enqNumId);
       $.ajax({
         url: 'ajax.php', // Leave it empty to send the request to the same page
         type: 'POST',

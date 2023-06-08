@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $quotNum1 = $quotNum . "R01";
 
         //check if quotation is not generated 
-        if ($quotStatus !== "Quotation generated") { 
+        if ($quotStatus != "Quotation generated") { 
             $fName = $fName . $quotNum1;
             $temp = explode(".", $_FILES["file"]["name"]);
             $newfilename = $fName . '.' . end($temp);
