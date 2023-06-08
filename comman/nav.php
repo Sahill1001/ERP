@@ -1,5 +1,5 @@
 <style>
-    .blink_me {
+    /* .blink_me {
         animation: blinker 3s linear infinite;
     }
 
@@ -7,11 +7,15 @@
         50% {
             opacity: 0;
         }
+    } */
+
+    .badge:hover {
+        cursor: pointer;
     }
 
     /* The sidebar menu */
     .sidebar {
-        height: 30%;
+        height: 100%;
         width: 0;
         /* 0 width - change this with JavaScript */
         position: fixed;
@@ -93,7 +97,7 @@
             <img src="img/cec.png" alt="cec_logo">
         </a>
     </div>
-    <div class="container"><button class="openbtn" onclick="openNav()" style="opacity: 0.6;">&#9776;Options</button>
+    <div class="container"><button class="openbtn" onclick="myFunction()" style="opacity: 0.6;">&#9776;Options</button>
         <ul>
             <li class="nav-item">
                 <span class="badge bg-primary mt-3 blink_me mr-4" data-bs-toggle="modal" data-bs-target="#enquiryModal">New Enquiry</span>
@@ -166,12 +170,12 @@
                     Welcome : <?php echo $name ?>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Update</a></li>
+                    <li><a class="dropdown-item disabled " href="#">Update</a></li>
                     <li><a class="dropdown-item" href="logout.php">LogOut</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><a class="dropdown-item disabled" href="#">Something else here</a></li>
                 </ul>
             </span>
 
@@ -188,7 +192,7 @@
 </div>
 
 
-<script>
+<!-- <script>
     /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
     function openNav() {
         document.getElementById("mySidebar").style.width = "100px";
@@ -196,6 +200,22 @@
     }
 
     /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+
+</script> -->
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("mySidebar");
+        var y = document.getElementById("main");
+        if (x.style.width == "100px") {
+            x.style.width = "0";
+            y.style.marginLeft = "0";
+        } else {
+            x.style.width = "100px";
+            y.style.marginLeft = "100px";
+        }
+    }
+
     function closeNav() {
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginLeft = "0";

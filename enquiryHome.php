@@ -101,7 +101,7 @@ include 'comman/enquiry.php';
       <td>' . $row["fname"] . '</td>
       <td>' . $row["email"] . '</td>
       <td>' . $row["phone"] . '</td>
-      <td ><input id="' . $row["enqNum"] . '" name="quot" type="radio" value="' . $row["enqNum"] . '" style="visibility: hidden;"><label for="' . $row["enqNum"] . '"><span class="badge rounded-pill bg-primary" data-bs-toggle="modal" data-bs-target="#quotationModal">Quotation</span></label></td>
+      <td ><input id="' . $row["enqNum"] . '" name="quot" type="radio" value="' . $row["enqNum"] . '" style="visibility: hidden;"><label for="' . $row["enqNum"] . '"><span class="badge rounded-pill bg-primary " data-bs-toggle="modal" data-bs-target="#quotationModal">Quotation</span></label></td>
     </tr>
   </tbody>';
               }
