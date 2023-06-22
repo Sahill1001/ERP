@@ -105,7 +105,7 @@ include 'comman/enquiry.php';
             $quy_result = mysqli_query($conn, $qry);
             if (mysqli_num_rows($quy_result) > 0) {
               while ($row = mysqli_fetch_assoc($quy_result)) {
-                echo ' <tbody>
+                echo ' <tbody id="myTable">
     <tr>
       <th scope="row">' . ++$counter . '</th>
       <td ><input id="id' . $row["enqNum"] . '" name="enqNumId" type="radio" value="' . $row["enqNum"] . '" style="visibility: hidden;"><label for="id' . $row["enqNum"] . '"><span class="badge rounded-pill bg-primary" data-bs-toggle="modal" data-bs-target="#fileModal">' . $row["quotNum"] . '</span></label></td>

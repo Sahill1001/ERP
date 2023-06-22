@@ -1,3 +1,15 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
 <style>
     /* .blink_me {
         animation: blinker 3s linear infinite;
@@ -159,12 +171,7 @@
                     </form>
                 </div>
             </div>
-
-
-            <form class="d-flex" role="search" method="post" action="search.php">
-                <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" name="search">
-                <button class="btn btn-outline-primary" type="submit" name="submitSearch">Search</button>
-            </form>
+            <input class="form-control me-2 " id="myInput" type="search" placeholder="Search" aria-label="Search" aria-placeholder="Search"  name="search">
             <span class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Welcome : <?php echo $name ?>

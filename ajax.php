@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $files = scandir($row["file_address"], SCANDIR_SORT_DESCENDING);
             $num = count($files);
             for ($i = 0; $i < ($num - 2); $i++) {
-                echo ' <tbody>
+                echo ' <tbody id="myTable">
             <tr>
                 <th scope="row">' . ++$counter . '</th>
                 <th scope="row">' . $files[$i] . '</th>

@@ -37,7 +37,7 @@ include 'comman/enquiry.php';
                 $quy_result = mysqli_query($conn, $qry);
                 if (mysqli_num_rows($quy_result) > 0) {
                     while ($row = mysqli_fetch_assoc($quy_result)) {
-                        echo ' <tbody>
+                        echo ' <tbody id="myTable">
     <tr>
       <th scope="row">' . ++$counter . '</th>
       <td>' . $row["quotNum"] . '</td>
